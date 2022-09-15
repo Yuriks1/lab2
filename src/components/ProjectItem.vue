@@ -78,6 +78,6 @@ li {
   text-align: end;
 }
 .complete {
-  border-left: 5px solid green;
+  border:5px solid white
 }
 </style>

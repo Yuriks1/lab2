@@ -41,16 +41,16 @@ nav {
 
 nav button {
 
-  box-shadow:inset 0 1px 0 0 #f5978e;
+  box-shadow: 0 0 0 10px hsl(0, 0%, 80%),
+  0 0 0 15px hsl(0, 0%, 90%);
   background: #f24537 linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
-  border-radius:6px;
-  border:1px solid #d02718;
-  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid #d02718;
   margin: 1rem;
-  font-size:20px;
-  font-weight:bold;
-  padding:6px 24px;
-  text-shadow:0 1px 0 #810e05;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-shadow: 0 1px 0 #810e05;
 }
 
 nav button:hover
