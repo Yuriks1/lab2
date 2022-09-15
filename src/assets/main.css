@@ -1,10 +1,27 @@
-@import "./base.css";
+:root {
+
+
+  --color-primary:#ff7b02;
+  --color-primary-variant:#e5a55d;
+  --color-bg-4:#36005a;
+  --color-light:#d0b8e0;
+  --color-white:hsl(0,0%,90%);
+  --container-width-lg: 88%;
+  --container-width-md: 92%;
+
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--color-bg-4);
+  color: var(--color-light);
+  line-height: 2;
+}
 
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-
   font-weight: normal;
 }
 

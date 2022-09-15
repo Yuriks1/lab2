@@ -1,47 +1,169 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <the-header @show="show"></the-header>
+  <the-projects
+      v-if="showProjects"
+      :projects="projects"
+      @deleteProject="deleteProject"
+      @completeProject="completeProject"
+      :completedProjects="completedProjects"
+      :isGoingProjects="isGoingProjects"
+  ></the-projects>
+  <add-project v-if="this.showAddProject" @add="addProject"></add-project>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script>
+import TheHeader from "./components/header/TheHeader.vue";
+import TheProjects from "./components/TheProjects.vue";
+import AddProject from "./components/AddProject.vue";
+
+
+
+export default {
+  name: "App",
+  components: {
+    TheHeader,
+    TheProjects,
+    AddProject,
+  },
+  data() {
+    return {
+      showProjects: true,
+      showAddProject: false,
+      projects: [
+        {
+          title: "Plans for Monday:",
+          isComplete: false,
+          description: "Finish lab2, clean room",
+        },
+        {
+          title: "Plans for Tuesday:",
+          isComplete: false,
+          description: "Finish lab3, wash clothes",
+        },
+        {
+          title: "Plans for Wednesday:",
+          isComplete: false,
+          description: "Iron clothes, meet friends",
+        },
+        {
+          title: "Plans for Thursday:",
+          isComplete: false,
+          description: "Study Java, meet sister",
+        },
+        {
+          title: "Plans for Friday:",
+          isComplete: false,
+          description: "Study Vue, meet cousin",
+        },
+        {
+          title: "Plans for Saturday:",
+          isComplete: false,
+          description: "Train, eat healthy",
+        },
+      ],
+      completedProjects: [],
+      isGoingProjects: [],
+    };
+  },
+  methods: {
+    show(showProjects, showAddProject) {
+      this.showProjects = showProjects;
+      this.showAddProject = showAddProject;
+    },
+    addProject(title, description) {
+      this.projects.push({
+        title: title,
+        isComplete: false,
+        isGoing: false,
+        description: description,
+      });
+      this.showProjects = true;
+      this.showAddProject = false;
+    },
+    deleteProject(title) {
+      const index = this.projects.findIndex(
+          (project) => project.title === title
+      );
+      this.projects.splice(index, 1);
+      this.completedProjects = this.projects.filter((t) => {
+        return t.isComplete !== false;
+      });
+      this.isGoingProjects = this.projects.filter((t) => {
+        return t.isComplete !== true;
+      });
+    },
+    completeProject(title) {
+      const p = this.projects.find((project) => project.title === title);
+      p.isComplete = !p.isComplete;
+      this.completedProjects = this.projects.filter((t) => {
+        return t.isComplete !== false;
+      });
+      this.isGoingProjects = this.projects.filter((t) => {
+        return t.isComplete !== true;
+      });
+    },
+  },
+};
+</script>
+
+<style>
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
-.logo {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: white;
+  color: var(--color-light);
+  line-height: 1.7;
+}
+
+
+
+h1 {
+  font-size: 2rem;
+  color: var(--color-white);
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+p{
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+a {
+  color: var(--color-light);
+}
+
+a:hover {
+  color: var(--color-primary);
+
+}
+
+img{
   display: block;
-  margin: 0 auto 2rem;
+  object-fit: cover;
+  width: 100%;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
