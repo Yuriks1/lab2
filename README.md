@@ -1,4 +1,4 @@
-# Labb 2: HTML, CSS och Vue
+# Labb 2: HTML, CSS och Vue   ->   Planner
 
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-vue.svg)](https://forthebadge.com)
