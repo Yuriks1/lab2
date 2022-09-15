@@ -138,26 +138,28 @@ h1 {
   font-size: 2rem;
   color: var(--color-white);
   font-family: 'Montserrat', sans-serif;
+  border: 1px solid #d02718
+
 
 }
 
 p{
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-family: 'Montserrat', sans-serif;
+  color: white;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.3em;
+  color: white;
+
 }
 
 a {
-  color: var(--color-light);
+  color: black;
 }
 
-a:hover {
-  color: var(--color-primary);
 
-}
 
 img{
   display: block;

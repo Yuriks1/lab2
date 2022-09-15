@@ -58,11 +58,11 @@ ul {
 
 
 svg {
-  height: 2.5rem;
+  height: 2rem;
   width: 10rem;
   background: white;
   border-radius: calc( 3.5rem/2);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   box-shadow: black;
   border: 1px solid var(--color-bg-4);
 }
