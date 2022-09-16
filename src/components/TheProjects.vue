@@ -6,10 +6,11 @@
     <button @click="completedButton" :class="{ clicked: completed }">
       COMPLETED
     </button>
-    <button @click="onGoingButton" :class="{ clicked: onGoing }">
+    <button  @click="onGoingButton" :class="{ clicked: onGoing }">
       ONGOING
     </button>
   </div>
+
   <project-item
       v-for="project in projectsShow"
       :key="project.title"
@@ -17,6 +18,8 @@
       @deleteProject="deleteProject"
       @completeProject="completeProject"
   ></project-item>
+  <div class="headline"></div>
+
 
 </template>
 
@@ -74,12 +77,12 @@ export default {
 
 button,
 a {
+  cursor: pointer;
   box-shadow:inset 0 1px 0 0 #f5978e;
   background: #f24537 linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
   border-radius:6px;
   border:1px solid #d02718;
   display:inline-block;
-  cursor:pointer;
   color:#ffffff;
   font-family: Arial, serif;
   font-size:15px;

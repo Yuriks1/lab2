@@ -88,6 +88,7 @@ textarea {
 }
 
 button {
+  cursor: pointer;
   background-color:red;
   border: 0;
   padding: 10px 15px;

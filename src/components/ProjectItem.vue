@@ -65,6 +65,8 @@ svg {
   margin-bottom: 1rem;
   box-shadow: black;
   border: 1px solid var(--color-bg-4);
+  cursor: pointer;
+
 }
 
 svg:hover {

@@ -6,6 +6,11 @@
     <button :class="{ clicked: showAddProjects }" @click="addProjects">
       Add Project
     </button>
+  <h1>Welcome to Weekly Planner! </h1>
+    <p>Plan your tasks with this nifty and handy planner</p>
+    <p>Add or remove tasks with ease</p>
+
+
   </nav>
 </template>
 
@@ -45,6 +50,7 @@ nav button {
   0 0 0 15px hsl(0, 0%, 90%);
   background: #f24537 linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
   border-radius: 6px;
+  cursor: pointer;
   border: 1px solid #d02718;
   margin: 1rem;
   font-size: 20px;

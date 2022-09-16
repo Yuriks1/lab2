@@ -144,6 +144,7 @@ h1 {
 }
 
 p{
+  top: 5rem;
   font-size: 1.1rem;
   font-family: 'Montserrat', sans-serif;
   color: white;
