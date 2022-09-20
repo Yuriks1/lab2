@@ -95,6 +95,9 @@ a {
 button:hover {
   cursor: pointer;
   color: black;
+  box-shadow: 0 1rem 1rem rgba(0,0,0,0.4);
+  transform: translateY(0.5rem);
+
 }
 
 
