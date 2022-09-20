@@ -32,4 +32,9 @@ div {
   border: solid;
 
 }
+
+div:hover{
+
+  color: black;
+}
 </style>

@@ -57,6 +57,7 @@ ul {
 
 
 
+
 svg {
   height: 2rem;
   width: 10rem;
@@ -79,6 +80,8 @@ svg:hover {
 li {
   display: inline;
 }
+
+
 .icons {
   text-align: end;
 }
